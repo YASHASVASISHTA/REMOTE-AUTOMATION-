@@ -1,5 +1,5 @@
 # REMOTE-AUTOMATION-
-Welcome to the Remote Automation project! This project enables secure remote automation of tasks on a PC using email as the communication medium. With this setup, anyone from anywhere can send commands via email to the PC, triggering various actions, such as opening files, initiating torrent downloads, and more.
+Welcome to the Remote Automation project!. With this setup, anyone from anywhere can send commands via email to their PC, triggering various actions, such as opening files, initiating torrent downloads, and more. This project enables secure remote automation of tasks on a PC using email as the communication medium.
 
 The system involves two email accounts: one for the user who initiates the commands and another for the PC that executes the specified tasks. Both email accounts are secure and under your control, ensuring that only authorized users can interact with the PC and perform automation tasks.
 
