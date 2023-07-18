@@ -6,9 +6,9 @@ def get_email():
     
     dict={'Chrome':"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"}
     server=imapclient.IMAPClient('imap.gmail.com',ssl=True)
-    server.login('mahima18vasishta@gmail.com','zdjanuyjwwgtqybp')
+    server.login('#gmail','#gmailapp password')
     server.select_folder('INBOX',readonly=False)
-    UIDs=server.search(['FROM' ,'Yashas Vasishta <yashas752004@gmail.com>'])
+    UIDs=server.search(['FROM' ,'#persons gmail '])
     print(UIDs)
     instructions=[]
     for uid in UIDs:
@@ -55,42 +55,16 @@ def get_email():
               
                 
         
-    #screenshot=pyautogui.screenshot()
-    #screenshot.save(f"C:\\Users\\Sujay S C\\Downloads\\screen.png")
-    #send_confirmation('PC','The PC is awake and the scheduled tasks are running',"C:\\Users\\Sujay S C\\Downloads\\screen.png")
-             
-
-
-
+   
         
     
 def send_confirmation(process,body,attachment=None):
-    login=email.SMTP('yashas752004@gmail.com','teoyppkimhfvzjpp')
+    login=email.SMTP('#','#')
     if attachment:
-        login.send(to='pes1202203831@pesu.pes.edu',subject=f"{process} is running.",contents=body)
+        login.send(to='#',subject=f"{process} is running.",contents=body)
     else:
-        login.send(to='pes1202203831@pesu.pes.edu',subject=f"{process} is running.",contents=body,attachments=attachment)
+        login.send(to='#',subject=f"{process} is running.",contents=body,attachments=attachment)
     login.close()
            
 
-def sos():
-    import requests
-    import json
-
-    send_url = "http://api.ipstack.com/check?access_key=9218a6e821aca6b2d9e0b6111b782759"
-    geo_req = requests.get(send_url)
-    geo_json = json.loads(geo_req.text)
-    print(geo_json)
-    latitude = geo_json['latitude']
-    longitude = geo_json['longitude']
-    city = geo_json['city']
-    print(latitude)
-    print(longitude)
-    webbrowser.open(f'https://maps.google.com/?q={latitude},{longitude}')
-    time=datetime.datetime.now()
-    kit.sendwhatmsg_instantly(phone_no='+917569672112',message=f'This is an SOS from yashas ,this is his latest location https://maps.google.com/?q={latitude},{longitude} ')
-
-            
-#get_email()
-#sos()
-kit.sendwhats_image("+917569672112", "a.png")         
+get_email()
