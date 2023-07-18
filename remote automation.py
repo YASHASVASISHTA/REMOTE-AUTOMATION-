@@ -6,7 +6,7 @@ def get_email():
     
     dict={'Chrome':"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"}
     server=imapclient.IMAPClient('imap.gmail.com',ssl=True)
-    server.login('#gmail','#gmailapp password')
+    server.login('#GMAIL_ADDRESS','#16_DIGIT_APP_PASSWORD')
     server.select_folder('INBOX',readonly=False)
     UIDs=server.search(['FROM' ,'#persons gmail '])
     print(UIDs)
@@ -59,11 +59,11 @@ def get_email():
         
     
 def send_confirmation(process,body,attachment=None):
-    login=email.SMTP('#','#')
+    login=email.SMTP('#GMAIL_ADDRESS','#16_DIGIT_APP_PASSWORD')
     if attachment:
-        login.send(to='#',subject=f"{process} is running.",contents=body)
+        login.send(to='persons gmail',subject=f"{process} is running.",contents=body)
     else:
-        login.send(to='#',subject=f"{process} is running.",contents=body,attachments=attachment)
+        login.send(to='persons gmail',subject=f"{process} is running.",contents=body,attachments=attachment)
     login.close()
            
 
