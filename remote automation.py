@@ -1,6 +1,5 @@
 import imapclient,pyzmail,webbrowser,subprocess,pyautogui,threading,time,os,datetime
 import yagmail as email
-import pywhatkit as kit
 
 def get_email():
     
